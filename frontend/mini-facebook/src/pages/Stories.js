@@ -99,7 +99,7 @@ export const Stories = () => {
       <ul>
         {stories? stories.map(story =>
           <li key={story.id}>
-            {story.username+" "}<img width="100" height="175" src={"http://127.0.0.1:9000/imagebucket/"+story.imagename}/>
+            {story.username+" "}<img width="100" height="175" src={"http://localhost:81:9000/imagebucket/"+story.imagename}/>
            {/* <img src={"http://localhost:81/story"+require(story.storyimage)}/></li> */}</li>
         ) : <></>}
       </ul>

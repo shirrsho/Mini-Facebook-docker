@@ -3,11 +3,11 @@ from minio import Minio
 
 def uploadToMinio(img, imgname):
     client = Minio(
-            "minioobj:9000",
+            "minioobj:9000/",
             # access_key="5FKL2Oi9r73na5Zw",
             # secret_key="rQCvlokefQknyxwwt0pu9j6qCMu7Vgml", # for labpc
-            #access_key="minioadmin",
-            #secret_key="minioadmin",
+            access_key="minioadmin",
+            secret_key="minioadmin",
             secure=False
         )
     LOCAL_FILE_PATH = "/story/media/media/"
