@@ -10,12 +10,12 @@ UDP port 4789 for overlay network traffic
 to open port2377/tcp: firewall-cmd --add-port 2377/tcp
 
 
-sudo docker swarm init --advertise-addr 172.17.0.1
-Swarm initialized: current node (io6mtzo9wekqmjyijydzguc83) is now a manager.
+sudo docker swarm init --advertise-addr 10.100.104.20
+Swarm initialized: current node (lukd9sbrim4bcnh3f7mrgx7fk) is now a manager.
 
 To add a worker to this swarm, run the following command:
 
-    docker swarm join --token SWMTKN-1-458h2rgcyrt5xpycsxho7gpl8g386ckopkajoipp2ou184w4to-cq0ojduv2s4z04nwxb12x16je 172.17.0.1:2377
+    docker swarm join --token SWMTKN-1-43u43dan8b1f5802d27l81rle6kfrdoqrxo1pej4s2jz6t6xhu-1hdix0ypho8hihsldapeqs6l0 10.100.104.20:2377
 
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
