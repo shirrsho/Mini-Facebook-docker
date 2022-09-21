@@ -7,6 +7,9 @@ services:
     restart: unless-stopped
     ports:
       - 3000:3000
+    deploy:
+      mode: replicated
+      replicas: 1
     command: npm start
     
   nginx:
@@ -33,6 +36,9 @@ services:
     restart: unless-stopped
     ports:
       - 8001:8001
+    deploy:
+      mode: replicated
+      replicas: 1
   
   status:
     image: status
@@ -41,6 +47,9 @@ services:
     restart: unless-stopped
     ports:
       - 8003:8003
+    deploy:
+      mode: replicated
+      replicas: 1
       
   story:
     image: story
@@ -49,6 +58,9 @@ services:
     restart: unless-stopped
     ports:
       - 8004:8004
+    deploy:
+      mode: replicated
+      replicas: 1
     depends_on:
       - minioobj
       
@@ -57,11 +69,8 @@ services:
     ports:
       - "9000:9000"
       - "9001:9001"
+    deploy:
+      mode: replicated
+      replicas: 1
     restart: unless-stopped
-    volumes:
-      - ./test/.minio/data:/export
-      - ./test/.minio/config:/root/.minio
-    environment:
-      - MINIO_ROOT_USER=minioadmin
-      - MINIO_ROOT_PASSWORD=minioadmin
     command: server --address 0.0.0.0:9000 /data --console-address ":9001"
