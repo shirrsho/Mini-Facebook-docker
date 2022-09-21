@@ -19,7 +19,7 @@ const HomePage = () => {
   if(!authenticated) {return <Navigate to="/login"/>}
   
   let getStatuses = async () => {
-    let response = await fetch('http://localhost:81/status/', {
+    let response = await fetch('http://10.100.104.20:81/status/', {
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -35,7 +35,7 @@ const HomePage = () => {
   async function postStatus(e) {
         e.preventDefault();
         console.log("in loginUser");
-        let response = await fetch('http://localhost:81/status/', {
+        let response = await fetch('http://10.100.104.20:81/status/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json',

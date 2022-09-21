@@ -19,7 +19,7 @@ export const Stories = () => {
   if(!authenticated) return <Navigate to="/"/>
 
   let getStories = async () => {
-    let response = await fetch('http://localhost:81/story/', {
+    let response = await fetch('http://10.100.104.20:81/story/', {
       method:'GET',
       headers:{
         'Content-Type':'multipart/form-data',
@@ -44,7 +44,7 @@ export const Stories = () => {
     data.append("username", user.username)
 
     console.log(imgname);
-    axios.post("http://localhost:81/story/",data,{
+    axios.post("http://10.100.104.20:81/story/",data,{
       'headers': {'Content-Type':'multipart/form-data',
                   // 'Authorization':'Bearer ' + String(authTokens.access) 
                   }

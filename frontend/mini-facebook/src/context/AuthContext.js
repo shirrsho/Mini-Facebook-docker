@@ -20,7 +20,7 @@ export const AuthProvider = ({children}) => {
     let loginUser = async(event)=> {
         event.preventDefault();
         console.log("in loginUser");
-        let response = await fetch('http://localhost:81/login/', {
+        let response = await fetch('http://10.100.104.20:81/login/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -51,7 +51,7 @@ export const AuthProvider = ({children}) => {
 
     let updateToken = async(event)=> {
         console.log("in updatetoken");
-        let response = await fetch('http://localhost:81/login/token/refresh/',
+        let response = await fetch('http://10.100.104.20:81/login/token/refresh/',
         {
             // mode:'no-cors',
             method:'POST',

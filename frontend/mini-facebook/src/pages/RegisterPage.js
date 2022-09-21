@@ -12,7 +12,7 @@ const RegisterPage = () => {
   let registerUser = async(event)=> {
     event.preventDefault();
     console.log("in registerUser");
-    let response = await fetch('http://localhost:81/login/register/', {
+    let response = await fetch('http://10.100.104.20:81/login/register/', {
         method:'POST',
         headers:{
             'Content-Type':'application/json'
