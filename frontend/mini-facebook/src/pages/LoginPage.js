@@ -8,6 +8,7 @@ const LoginPage = () => {
   
   let {loginUser, authenticated} = useContext(AuthContext)
   if(authenticated) return <Navigate to="/"/>
+  const uri = "http://10.100.104.39"
 
   return (
     <div>

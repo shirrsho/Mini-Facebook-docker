@@ -7,12 +7,13 @@ const RegisterPage = () => {
   const navigate = useNavigate()
   let {authenticated} = useContext(AuthContext)
   if(authenticated) return <Navigate to="/"/>
+  const uri = "http://10.100.104.39"
 
 
   let registerUser = async(event)=> {
     event.preventDefault();
     console.log("in registerUser");
-    let response = await fetch('http://10.100.104.20:81/login/register/', {
+    let response = await fetch('http://10.100.104.39:80/login/register/', {
         method:'POST',
         headers:{
             'Content-Type':'application/json'

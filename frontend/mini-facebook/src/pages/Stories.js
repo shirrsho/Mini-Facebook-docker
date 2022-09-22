@@ -17,9 +17,10 @@ export const Stories = () => {
 
   let {authTokens,authenticated,user} = useContext(AuthContext)
   if(!authenticated) return <Navigate to="/"/>
+  const uri = 'http://10.100.104.39'
 
   let getStories = async () => {
-    let response = await fetch('http://10.100.104.20:81/story/', {
+    let response = await fetch('http://10.100.104.39:80/story/', {
       method:'GET',
       headers:{
         'Content-Type':'multipart/form-data',
@@ -44,7 +45,7 @@ export const Stories = () => {
     data.append("username", user.username)
 
     console.log(imgname);
-    axios.post("http://10.100.104.20:81/story/",data,{
+    axios.post('http://10.100.104.39:80/story/',data,{
       'headers': {'Content-Type':'multipart/form-data',
                   // 'Authorization':'Bearer ' + String(authTokens.access) 
                   }
@@ -99,7 +100,7 @@ export const Stories = () => {
       <ul>
         {stories? stories.map(story =>
           <li key={story.id}>
-            {story.username+" "}<img width="100" height="175" src={"http://localhost:81:9000/imagebucket/"+story.imagename}/>
+            {story.username+" "}<img width="100" height="175" src={"http://10.100.104.39:9000/imagebucket/"+story.imagename}/>
            {/* <img src={"http://localhost:81/story"+require(story.storyimage)}/></li> */}</li>
         ) : <></>}
       </ul>

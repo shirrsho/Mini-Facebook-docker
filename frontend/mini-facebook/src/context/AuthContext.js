@@ -14,13 +14,14 @@ export const AuthProvider = ({children}) => {
     let [user, setUser] = useState(()=>localStorage.getItem('authTokens') ? jwt_decode(JSON.parse(localStorage.getItem('authTokens')).access) : null)
     let [authenticated, setAuthenticated] = useState(()=>localStorage.getItem('authTokens') ? true : false);
     let [loading,setLoading] = useState(true);
-
+    const uri = 'http://10.100.104.39'
+    
     const navigate = useNavigate()
 
     let loginUser = async(event)=> {
         event.preventDefault();
         console.log("in loginUser");
-        let response = await fetch('http://10.100.104.20:81/login/', {
+        let response = await fetch('http://10.100.104.39:80/login/', {
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -51,7 +52,7 @@ export const AuthProvider = ({children}) => {
 
     let updateToken = async(event)=> {
         console.log("in updatetoken");
-        let response = await fetch('http://10.100.104.20:81/login/token/refresh/',
+        let response = await fetch('http://10.100.104.39:80/login/token/refresh/',
         {
             // mode:'no-cors',
             method:'POST',

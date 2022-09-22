@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders'
 ]
-CSRF_TRUSTED_ORIGINS = ['http://10.100.104.20:3000']
+CSRF_TRUSTED_ORIGINS = ['http://10.100.104.39:3000']
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     
