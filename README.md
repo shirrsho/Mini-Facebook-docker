@@ -13,12 +13,13 @@ to open port2377/tcp: firewall-cmd --add-port 2377/tcp
 
 
 sudo docker swarm init
-Swarm initialized: current node (j9mmeaghtd8eq479fegnssgvr) is now a manager.
+Swarm initialized: current node (u2v5259iq1vii0629rjm7fyxj) is now a manager.
 
 To add a worker to this swarm, run the following command:
 
-    docker swarm join --token SWMTKN-1-29v03xy2c18wrrax2vgdqjuk7qlz293jjs88gxmcf6cdz7gfa8-76tf7nl49oktmgn74amakctle 10.100.104.39:2377
+    docker swarm join --token SWMTKN-1-3yy68r0wa343b9dc7rs70hjgwfblpbi0q7xwtwt5rs3fhsr6bu-833jw39xltsrqww21dwo27gpb 10.100.100.176:2377
 
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
 
 
